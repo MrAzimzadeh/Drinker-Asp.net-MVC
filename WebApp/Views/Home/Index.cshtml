@@ -1,4 +1,5 @@
-﻿<!-- end banner -->
+﻿@model HomeVM
+<!-- end banner -->
 <!-- store -->
 <div class="store">
    <div class="container">
@@ -13,71 +14,27 @@
       </div>
       <div class="row">
          <div class="col-md-12">
-            <div class="black_bg">
-               <div class="row d_flex">
-                  <div class="col-md-4">
-                     <div class="store_box ">
-                        <figure><img src="images/store_img1.png" alt="#" /></figure>
+            @foreach (var product in Model.Prodact)
+            {
+               <div class="black_bg">
+                  <div class="row d_flex">
+                     <div class="col-md-4">
+                        <div class="store_box ">
+                           <figure><img src="images/@product.Title" alt="#" /></figure>
+                        </div>
                      </div>
-                  </div>
-                  <div class="col-md-8">
-                     <div class="store_box ">
+                     <div class="col-md-8">
+                        <div class="store_box ">
 
-                        <h3>Black Wine</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of
-                           a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                           more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                           here', making it look like readable English. Many desktop publishing packages</p>
-                        <a class="read_more" href="#">Read more</a>
+                           <h3>@product.Description</h3>
+                           <p>@product.PgotoUrl </p>
+                           <a class="read_more" href="#">Read more</a>
+                        </div>
                      </div>
-
                   </div>
                </div>
-            </div>
-            <div class="black_bg">
-               <div class="row d_flex">
-                  <div class="col-md-4">
-                     <div class="store_box ">
-                        <figure><img src="images/store_img2.png" alt="#" /></figure>
-                     </div>
-                  </div>
-                  <div class="col-md-8">
-                     <div class="store_box ">
-
-                        <h3>Red Wine</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of
-                           a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                           more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                           here', making it look like readable English. Many desktop publishing packages</p>
-                        <a class="read_more" href="#">Read more</a>
-                     </div>
-
-                  </div>
-               </div>
-            </div>
-            <div class="black_bg">
-               <div class="row d_flex">
-                  <div class="col-md-4">
-                     <div class="store_box ">
-                        <figure><img src="images/store_img3.png" alt="#" /></figure>
-                     </div>
-                  </div>
-                  <div class="col-md-8">
-                     <div class="store_box ">
-
-                        <h3>White Wine</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of
-                           a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                           more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                           here', making it look like readable English. Many desktop publishing packages</p>
-                        <a class="read_more" href="#">Read more</a>
-                     </div>
-
-                  </div>
-               </div>
-            </div>
+            }
          </div>
-
       </div>
    </div>
 </div>
