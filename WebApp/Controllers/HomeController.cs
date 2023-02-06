@@ -21,10 +21,13 @@ public class HomeController : Controller
     {
         var banner = _context.Banners.OrderByDescending(x =>x.Id).First();
         var prodacts = _context.Products.OrderByDescending(X=>X.Id).ToList();
+        var testimonials = _context.Testimonials.OrderByDescending(x=>x.Id).ToList();
         HomeVM homeVM = new()
         {
             Banner = banner,
-            Prodact = prodacts
+            Prodact = prodacts,
+            Testimonials =testimonials
+
         };
         return View(homeVM);
     }

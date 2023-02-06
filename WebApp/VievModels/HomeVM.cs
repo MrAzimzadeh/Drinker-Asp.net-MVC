@@ -10,6 +10,7 @@ namespace WebApp.VievModels
     {
         public Banner Banner { get; set; }
         public List<Product> Prodact{ get; set; }
-        
+        public List<Testimonial> Testimonials{ get; set; }
+
     }
 }
