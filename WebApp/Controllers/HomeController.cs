@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Data;
 using WebApp.Models;
+using WebApp.VievModels;
 
 namespace WebApp.Controllers;
 
@@ -8,14 +10,23 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    private readonly AppDbContext _context;
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var banner = _context.Banners.OrderByDescending(x =>x.Id).First();
+        var prodacts = _context.Products.OrderByDescending(X=>X.Id).ToList();
+        HomeVM homeVM = new()
+        {
+            Banner = banner,
+            Prodact = prodacts
+        };
+        return View(homeVM);
     }
 
     public IActionResult Privacy()

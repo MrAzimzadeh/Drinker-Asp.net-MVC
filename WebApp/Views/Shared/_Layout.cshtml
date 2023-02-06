@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model HomeVM
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -86,12 +87,12 @@
                <div class="row">
                   <div class="col-md-10 offset-md-1">
                      <div class="text-img">
-                        <figure><img src="images/box_img.png" alt="#" /></figure>
+                        <figure><img src="images/@Model.Banner.PhotoUrl" alt="#" /></figure>
                      </div>
                   </div>
                   <div class="col-md-12">
                      <div class="text-bg">
-                        <h1>Spent the best time with best wine</h1>
+                        <h1>@Model.Banner.Title</h1>
                         <a href="#">Read More</a>
                      </div>
                   </div>
