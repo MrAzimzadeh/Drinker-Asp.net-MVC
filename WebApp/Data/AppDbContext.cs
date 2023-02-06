@@ -10,11 +10,10 @@ namespace WebApp.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options) { }
-
-        public DbSet<Banner> Banners{ get; set; }   
+        public DbSet<Banner> Banners{ get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Testimonial> Testimonials { get; set; }
-
+        public DbSet<Testimonial> Testimonials{ get; set; }
+        
     }
 }
