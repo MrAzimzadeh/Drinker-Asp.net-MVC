@@ -14,4 +14,4 @@ namespace WebApp.Models
         public string UserMessage { get; set; }
 
     }
-}
+}  
